@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
 
     <!-- favicon -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -107,11 +109,139 @@
 
 <body id="top">
 
-    <!-- PRELOADER -->
-    <div class="preload" data-preaload>
-        <div class="circle"></div>
-        <p class="text">Gadeni Stays</p>
-    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Gadeni Stays - Preloader</title>
+      <style>
+        /* Preloader styling */
+        .preload {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: fixed;
+          top: 0; 
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: white; /* Background color */
+          z-index: 9999;
+          gap: 1rem;
+        }
+    
+        /* Animated spinning circle */
+        .circle {
+          width: 50px;
+          height: 50px;
+          border: 4px solid #4285F4;
+          border-top: 4px solid transparent;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+    
+        /* Preloader text */
+        .text {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #4285F4;
+        }
+    
+        /* Spin animation */
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    
+        /* Mobile view adjustments */
+        @media (max-width: 480px) {
+          .preload {
+            gap: 0.7rem;
+          }
+          
+          .text {
+            font-size: 1.2rem;
+          }
+    
+          .circle {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      </style>
+    </head>
+    
+    <body>
+    
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Gadeni Stays - Preloader</title>
+          <style>
+            /* Preloader styling */
+            .preload {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              position: fixed;
+              top: 0; 
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              background-color: white; /* Background color */
+              z-index: 9999;
+              gap: 1rem;
+            }
+        
+            /* Animated spinning circle */
+            .circle {
+              width: 50px;
+              height: 50px;
+              border: 4px solid #4285F4;
+              border-top: 4px solid transparent;
+              border-radius: 50%;
+              animation: spin 1s linear infinite;
+            }
+        
+            /* Preloader text */
+            .text {
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: #4285F4;
+            }
+        
+            /* Spin animation */
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+        
+            /* Mobile view adjustments */
+            @media (max-width: 480px) {
+              .preload {
+                gap: 0.7rem;
+              }
+              
+              .text {
+                font-size: 1.2rem;
+              }
+        
+              .circle {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          </style>
+        </head>
+        
+        <body>
+     
+    
 
     <!-- TOP BAR -->
    
@@ -177,27 +307,23 @@
             <!-- WhatsApp & Call Buttons (added here) -->
           
         
-            <ul class="hero-slider" data-hero-slider>
+            <ul class="hero-slider" >
                 <div style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 0.8rem; align-items: center; font-family: Arial, sans-serif; margin-bottom: 15px;">
-                    <!-- WhatsApp Button -->
-                    <a href="https://wa.me/917060984899" 
-                       style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; 
-                              background: #25D366; color: white; padding: 0.5rem 0.9rem; 
-                              border-radius: 50px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-                              font-size: 0.85rem; transition: all 0.2s ease;">
-                        <ion-icon name="logo-whatsapp" style="font-size: 1rem;"></ion-icon>
-                        <span>WhatsApp</span>
-                    </a>
-                
-                    <!-- Call Button -->
-                    <a href="tel:+919997226512" 
-   style="display: flex; align-items: center; gap: 0.4rem; text-decoration: none; 
-          background: #4285F4; color: white; padding: 0.5rem 0.9rem; 
-          border-radius: 50px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-          font-size: 0.85rem; transition: all 0.2s ease;">
-  📞
-  <span>Call Now</span>
-</a>
+      
+
+<!-- Call Button -->
+<div >
+    <a href="tel:+919997226512" 
+    class="btn btn-primary"
+       style=" display: flex; align-items: center; gap: 0.4rem; text-decoration: none; 
+              background: #4285F4; color: white; padding: 0.5rem 0.9rem; 
+              border-radius: 50px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+              font-size: 0.85rem; transition: all 0.2s ease;">
+        📞
+        <span>+91 9997226512</span>
+        <span>+91 9868734324</span>
+    </a>
+</div>
 
                 </div>
                 
@@ -318,7 +444,9 @@
     
     <!-- Ionicons script (make sure it's in your head) -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
    <!-- Room 1 -->
    <div class="room-card">
        <div class="room-media">
@@ -408,7 +536,7 @@
    <div class="room-card">
        <div class="room-media">
            <figure class="room-banner img-holder" style="--width: 380; --height: 440;">
-               <img src="https://a0.muscache.com/im/pictures/4a693116-7072-430e-b05a-13089f5fbdab.jpg?im_w=1200" width="380" height="440" loading="lazy" 
+               <img src="https://a0.muscache.com/im/pictures/miso/Hosting-944991643902274568/original/5781132a-1a78-4762-8f22-ecd151035623.jpeg?im_w=1440" width="380" height="440" loading="lazy" 
                     alt="Sky Cabin" class="img-cover">
             
            </figure>
