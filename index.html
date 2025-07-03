@@ -993,9 +993,7 @@
             overflow: hidden;
         }
 
-        .btn-primary:hover {
-           
-        }
+       
 
         @media (max-width: 768px) {
             .rooms {
@@ -1077,24 +1075,65 @@
           
         
             <ul class="hero-slider" >
-                <div style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 0.8rem; align-items: center; font-family: Arial, sans-serif; margin-bottom: 15px;">
-      
+                <!-- Top Button Row - Place inside your section -->
+<div style="
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  flex-wrap: wrap;
+">
 
-<!-- Call Button -->
-<div >
-    <a href="tel:+919997226512" 
-    class="btn btn-primary"
-       style=" display: flex; align-items: center; gap: 0.4rem; text-decoration: none; 
-              background: #4285F4; color: white; padding: 0.5rem 0.9rem; 
-              border-radius: 50px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-              font-size: 0.85rem; transition: all 0.2s ease;">
-        📞
-        <span>+91 9997226512</span>
+  <!-- Check Availability Button (Left Side) -->
+  <a href="./availability.html" target="_blank"
+     style="
+       display: flex;
+       align-items: center;
+       background-color: #28a745; /* Green */
+       color: white;
+       padding: 0.6rem 1.2rem;
+       border-radius: 50px;
+       font-weight: bold;
+       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+       font-size: 0.9rem;
+       text-decoration: none;
+       transition: background 0.3s ease;
+     "
+     onmouseover="this.style.backgroundColor='#218838'"
+     onmouseout="this.style.backgroundColor='#28a745'"
+  >
+   <span>Check Availability</span>
+  </a>
 
-    </a>
+  <!-- Call Button (Right Side) -->
+  <a href="tel:+919997226512"
+     style="
+       display: flex;
+       align-items: center;
+       background: #007bff;
+       color: white;
+       padding: 0.6rem 1.2rem;
+       border-radius: 50px;
+       font-weight: bold;
+       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+       font-size: 0.9rem;
+       text-decoration: none;
+       transition: background 0.3s ease;
+     "
+     onmouseover="this.style.backgroundColor='#0069d9'"
+     onmouseout="this.style.backgroundColor='#007bff'"
+  >
+    📞&nbsp;<span style="font-weight: bold;">+91 9997226512</span>
+  </a>
+
 </div>
 
-                </div>
                 
                 <style>
                     /* Hover effects */
@@ -1154,7 +1193,7 @@
                     <a href="./gallery.html" target="_blank" class="btn btn-primary slider-reveal">
                         <span class="text text-1">Gallery</span>
                         <span class="text text-2" aria-hidden="true">Gallery</span>
-                    </a>
+                   
                 </li>
         
                 <li class="slider-item" data-hero-slider-item>
