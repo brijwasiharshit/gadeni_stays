@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml" />
+
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -19,7 +21,6 @@
         background: url("https://a0.muscache.com/im/pictures/miso/Hosting-573833227607639148/original/52d1a7a9-1367-4a7b-bdc5-327288580fff.jpeg?im_w=1200")
           no-repeat center center fixed;
         background-size: cover;
-        /* background-color: rgba(255, 255, 255, 0.85); */
         background-blend-mode: lighten;
       }
 
@@ -27,7 +28,6 @@
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
-        /* background: rgba(255, 255, 255, 0.9); */
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         padding: 10px;
@@ -42,19 +42,17 @@
         font-weight: 600;
       }
 
-      /* Instagram link styling */
       .instagram-link {
         position: absolute;
         top: 10px;
         right: 10px;
-        background: #f09433;
         background: linear-gradient(
           45deg,
-          #f09433 0%,
-          #e6683c 25%,
-          #dc2743 50%,
-          #cc2366 75%,
-          #bc1888 100%
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
         );
         color: white;
         padding: 5px 10px;
@@ -70,7 +68,6 @@
         margin-right: 5px;
       }
 
-      /* Table container with horizontal scrolling */
       .table-container {
         width: 100%;
         overflow-x: auto;
@@ -82,32 +79,30 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         min-width: 600px;
         background-color: rgba(255, 255, 255, 0.8);
       }
 
       th,
       td {
-        padding: 8px 10px;
+        padding: 20px;
         border: 1px solid #e0e0e0;
         text-align: center;
         word-break: break-word;
       }
 
-      /* First column styling (dates) */
       th:first-child,
       td:first-child {
         position: sticky;
         left: 0;
         background: rgba(255, 255, 255, 0.95);
         z-index: 2;
-        min-width: 100px;
+        white-space: nowrap;
         text-align: left;
         box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1);
       }
 
-      /* Header row styling */
       thead th {
         position: sticky;
         top: 0;
@@ -117,12 +112,10 @@
         z-index: 3;
       }
 
-      /* Special styling for top-left cell */
       thead th:first-child {
         z-index: 4;
       }
 
-      /* Availability status colors */
       .available-0 {
         background-color: rgba(255, 235, 238, 0.8);
         color: #c62828;
@@ -143,7 +136,6 @@
         color: #1565c0;
       }
 
-      /* Legend styling */
       .legend {
         display: flex;
         flex-wrap: wrap;
@@ -170,17 +162,20 @@
         margin-right: 6px;
       }
 
-      /* Responsive adjustments */
+      /* Mobile-specific */
       @media (max-width: 480px) {
         th,
         td {
-          padding: 6px 8px;
-          font-size: 0.75rem;
+          font-size: 0.7rem;
+          padding: 5px 4px;
+          width: 80px;
         }
 
         td:first-child,
         th:first-child {
-          min-width: 80px;
+          font-size: 0.7rem;
+          padding: 5px 4px;
+          width: 80px;
         }
 
         .legend {
@@ -192,6 +187,39 @@
           font-size: 0.7rem;
           padding: 3px 8px;
         }
+
+        /* Scroll Buttons */
+        .scroll-button {
+          display: block;
+          position: fixed;
+          bottom: 70px;
+          width: 40px;
+          height: 40px;
+          background-color: rgba(52, 152, 219, 0.9);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          z-index: 99;
+          font-size: 20px;
+          text-align: center;
+          line-height: 40px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-left {
+          left: 10px;
+        }
+
+        .scroll-right {
+          right: 10px;
+        }
+      }
+
+      /* Hide buttons on desktop */
+      @media (min-width: 481px) {
+        .scroll-button {
+          display: none !important;
+        }
       }
     </style>
     <link
@@ -200,7 +228,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- Instagram Link -->
       <a
         href="https://www.instagram.com/gadeni_stays"
         class="instagram-link"
@@ -210,9 +237,17 @@
 
       <h1>Room Availability</h1>
 
-      <div class="table-container">
+      <!-- Scroll Buttons -->
+      <button class="scroll-button scroll-left" onclick="scrollTable(-200)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="scroll-button scroll-right" onclick="scrollTable(200)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="table-container" id="table-container">
         <table id="availability-table">
-          <!-- Table content will be loaded by JavaScript -->
+          <!-- Data from script -->
         </table>
       </div>
 
@@ -220,26 +255,26 @@
         <div class="legend-item">
           <span
             class="status-indicator"
-            style="background-color: #c62828"></span>
-          Not Available
+            style="background-color: #c62828"></span
+          >Not Available
         </div>
         <div class="legend-item">
           <span
             class="status-indicator"
-            style="background-color: #f57c00"></span>
-          1 Available
+            style="background-color: #f57c00"></span
+          >1 Available
         </div>
         <div class="legend-item">
           <span
             class="status-indicator"
-            style="background-color: #2e7d32"></span>
-          2 Available
+            style="background-color: #2e7d32"></span
+          >2 Available
         </div>
         <div class="legend-item">
           <span
             class="status-indicator"
-            style="background-color: #1565c0"></span>
-          3+ Available
+            style="background-color: #1565c0"></span
+          >3+ Available
         </div>
       </div>
     </div>
@@ -259,7 +294,6 @@
           const table = document.getElementById("availability-table");
           table.innerHTML = "";
 
-          // Create header
           const thead = document.createElement("thead");
           const headerRow = document.createElement("tr");
 
@@ -267,26 +301,21 @@
             rows[0].forEach((cell, index) => {
               const th = document.createElement("th");
               th.textContent = cell;
-              if (index === 0) {
-                th.style.minWidth = "100px";
-              }
+              if (index === 0) th.style.minWidth = "100px";
               headerRow.appendChild(th);
             });
             thead.appendChild(headerRow);
             table.appendChild(thead);
           }
 
-          // Create body
           const tbody = document.createElement("tbody");
           for (let i = 1; i < rows.length; i++) {
             const tr = document.createElement("tr");
-
             rows[i].forEach((cell, index) => {
               const cellElement = document.createElement(
                 index === 0 ? "th" : "td"
               );
               cellElement.textContent = cell;
-
               if (index > 0) {
                 const availability = parseInt(cell);
                 if (!isNaN(availability)) {
@@ -305,13 +334,10 @@
                   }
                 }
               }
-
               tr.appendChild(cellElement);
             });
-
             tbody.appendChild(tr);
           }
-
           table.appendChild(tbody);
         } catch (error) {
           console.error("Error loading data:", error);
@@ -320,13 +346,17 @@
         }
       }
 
-      // Load data when page loads
-      document.addEventListener("DOMContentLoaded", loadCSVData);
+      function scrollTable(offset) {
+        document.getElementById("table-container").scrollBy({
+          left: offset,
+          behavior: "smooth",
+        });
+      }
 
-      // Also reload when device orientation changes
-      window.addEventListener("orientationchange", function () {
-        setTimeout(loadCSVData, 300);
-      });
+      document.addEventListener("DOMContentLoaded", loadCSVData);
+      window.addEventListener("orientationchange", () =>
+        setTimeout(loadCSVData, 300)
+      );
     </script>
   </body>
 </html>
