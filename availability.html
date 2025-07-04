@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml" />
-
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -15,7 +14,7 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        padding: 10px;
+        padding: 5px;
         color: #333;
         margin: 0;
         background: url("https://a0.muscache.com/im/pictures/miso/Hosting-573833227607639148/original/52d1a7a9-1367-4a7b-bdc5-327288580fff.jpeg?im_w=1200")
@@ -28,24 +27,24 @@
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        padding: 5px;
         position: relative;
       }
 
       h1 {
         color: white;
         text-align: center;
-        margin: 10px 0;
-        font-size: 1.5rem;
+        margin: 5px 0;
+        font-size: 1rem;
         font-weight: 600;
       }
 
       .instagram-link {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 5px;
+        right: 5px;
         background: linear-gradient(
           45deg,
           #f09433,
@@ -55,9 +54,9 @@
           #bc1888
         );
         color: white;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 0.8rem;
+        padding: 3px 6px;
+        border-radius: 15px;
+        font-size: 0.6rem;
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -65,28 +64,28 @@
       }
 
       .instagram-link i {
-        margin-right: 5px;
+        margin-right: 3px;
       }
 
       .table-container {
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         position: relative;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.8rem;
-        min-width: 600px;
+        font-size: 0.6rem;
+        min-width: 400px;
         background-color: rgba(255, 255, 255, 0.8);
       }
 
       th,
       td {
-        padding: 20px;
+        padding: 4px 3px;
         border: 1px solid #e0e0e0;
         text-align: center;
         word-break: break-word;
@@ -100,7 +99,8 @@
         z-index: 2;
         white-space: nowrap;
         text-align: left;
-        box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
+        width: 60px;
       }
 
       thead th {
@@ -140,9 +140,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        margin-top: 15px;
-        font-size: 0.8rem;
+        gap: 5px;
+        margin-top: 8px;
+        font-size: 0.6rem;
       }
 
       .legend-item {
@@ -150,68 +150,68 @@
         align-items: center;
         white-space: nowrap;
         background: rgba(255, 255, 255, 0.8);
-        padding: 3px 8px;
-        border-radius: 10px;
+        padding: 2px 5px;
+        border-radius: 8px;
       }
 
       .status-indicator {
         display: inline-block;
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
-        margin-right: 6px;
+        margin-right: 4px;
       }
 
       /* Mobile-specific */
       @media (max-width: 480px) {
         th,
         td {
-          font-size: 0.7rem;
-          padding: 5px 4px;
-          width: 80px;
+          font-size: 0.5rem;
+          padding: 3px 2px;
+          width: 50px;
         }
 
         td:first-child,
         th:first-child {
-          font-size: 0.7rem;
-          padding: 5px 4px;
-          width: 80px;
+          font-size: 0.5rem;
+          padding: 3px 2px;
+          width: 50px;
         }
 
         .legend {
-          font-size: 0.7rem;
-          gap: 8px;
+          font-size: 0.5rem;
+          gap: 4px;
         }
 
         .instagram-link {
-          font-size: 0.7rem;
-          padding: 3px 8px;
+          font-size: 0.5rem;
+          padding: 2px 5px;
         }
 
         /* Scroll Buttons */
         .scroll-button {
           display: block;
           position: fixed;
-          bottom: 70px;
-          width: 40px;
-          height: 40px;
+          bottom: 50px;
+          width: 30px;
+          height: 30px;
           background-color: rgba(52, 152, 219, 0.9);
           color: white;
           border: none;
           border-radius: 50%;
           z-index: 99;
-          font-size: 20px;
+          font-size: 16px;
           text-align: center;
-          line-height: 40px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          line-height: 30px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .scroll-left {
-          left: 10px;
+          left: 5px;
         }
 
         .scroll-right {
-          right: 10px;
+          right: 5px;
         }
       }
 
@@ -238,10 +238,10 @@
       <h1>Room Availability</h1>
 
       <!-- Scroll Buttons -->
-      <button class="scroll-button scroll-left" onclick="scrollTable(-200)">
+      <button class="scroll-button scroll-left" onclick="scrollTable(-150)">
         <i class="fas fa-chevron-left"></i>
       </button>
-      <button class="scroll-button scroll-right" onclick="scrollTable(200)">
+      <button class="scroll-button scroll-right" onclick="scrollTable(150)">
         <i class="fas fa-chevron-right"></i>
       </button>
 
@@ -301,7 +301,7 @@
             rows[0].forEach((cell, index) => {
               const th = document.createElement("th");
               th.textContent = cell;
-              if (index === 0) th.style.minWidth = "100px";
+              if (index === 0) th.style.minWidth = "60px";
               headerRow.appendChild(th);
             });
             thead.appendChild(headerRow);
@@ -320,16 +320,16 @@
                 const availability = parseInt(cell);
                 if (!isNaN(availability)) {
                   if (availability === 0) {
-                    cellElement.textContent = "Not Available";
+                    cellElement.textContent = "N/A";
                     cellElement.className = "available-0";
                   } else if (availability === 1) {
-                    cellElement.textContent = "1 Available";
+                    cellElement.textContent = "1 Avl";
                     cellElement.className = "available-1";
                   } else if (availability === 2) {
-                    cellElement.textContent = "2 Available";
+                    cellElement.textContent = "2 Avl";
                     cellElement.className = "available-2";
                   } else {
-                    cellElement.textContent = `${availability} Available`;
+                    cellElement.textContent = availability + "Avl";
                     cellElement.className = "available-3plus";
                   }
                 }
@@ -342,7 +342,7 @@
         } catch (error) {
           console.error("Error loading data:", error);
           document.getElementById("availability-table").innerHTML =
-            "<tr><td colspan='100%' style='text-align:center;padding:20px;'>Error loading availability data. Please try again later.</td></tr>";
+            "<tr><td colspan='100%' style='text-align:center;padding:10px;font-size:0.6rem;'>Error loading data. Please try again later.</td></tr>";
         }
       }
 
